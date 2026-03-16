@@ -1,0 +1,129 @@
+
+body{
+margin:0;
+font-family:Inter;
+background:linear-gradient(120deg,#05060d,#0a1023);
+color:white;
+overflow:hidden;
+}
+
+.cinema{
+position:fixed;
+inset:0;
+pointer-events:none;
+background:radial-gradient(circle,transparent 50%,rgba(0,0,0,.4));
+}
+
+.slides{
+display:flex;
+width:300%;
+height:100vh;
+transition:transform .4s ease;
+}
+
+.slide{
+width:100vw;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:30px;
+padding:40px;
+box-sizing:border-box;
+animation:fade .6s ease;
+}
+
+@keyframes fade{
+from{opacity:.3;transform:scale(.97)}
+to{opacity:1;transform:scale(1)}
+}
+
+.images{
+display:flex;
+gap:20px;
+}
+
+.images img{
+height:260px;
+border-radius:16px;
+object-fit:contain;
+box-shadow:0 10px 40px rgba(0,0,0,.7);
+transition:transform .4s ease;
+}
+
+.images img:hover{
+transform:scale(1.08);
+}
+
+.images.single img{
+height:340px;
+}
+
+.text{
+max-width:900px;
+text-align:center;
+}
+
+.text h1{
+font-family:"Playfair Display";
+font-size:48px;
+}
+
+.text p{
+font-size:18px;
+color:#c7c7d9;
+}
+
+.player{
+width:420px;
+}
+
+.player iframe{
+width:100%;
+border-radius:14px;
+opacity:0;
+transform:translateY(10px);
+transition:.6s;
+}
+
+.slide.active iframe{
+opacity:1;
+transform:translateY(0);
+}
+
+.nav{
+position:fixed;
+bottom:30px;
+right:30px;
+display:flex;
+gap:10px;
+}
+
+button{
+width:60px;
+height:60px;
+border-radius:14px;
+border:1px solid rgba(255,255,255,.2);
+background:rgba(255,255,255,.08);
+color:white;
+font-size:20px;
+cursor:pointer;
+}
+
+.thread{
+position:absolute;
+width:100%;
+height:100%;
+pointer-events:none;
+}
+
+#line{
+stroke:rgba(255,255,255,.25);
+stroke-width:.6;
+fill:none;
+}
+
+#needle{
+fill:white;
+filter:drop-shadow(0 0 6px white);
+}
